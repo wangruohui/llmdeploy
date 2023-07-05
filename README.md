@@ -152,13 +152,13 @@ python3 lmdeploy/app.py {server_ip_addresss}:33337 {model_name}
 ### Single GPU
 
 ```shell
-python3 -m lmdeploy.serve.hf.client $NAME_OR_PATH_TO_HF_MODEL
+python3 -m lmdeploy.torch.client $NAME_OR_PATH_TO_HF_MODEL
 ```
 
 ### Tensor Parallel with DeepSpeed
 
 ```shell
-deepspeed --module --num_gpus 2 lmdeploy.serve.hf.client \
+deepspeed --module --num_gpus 2 lmdeploy.torch.client \
     $NAME_OR_PATH_TO_HF_MODEL \
     --max_new_tokens 64 \
     --temperture 0.8 \
